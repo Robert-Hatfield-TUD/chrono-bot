@@ -25,16 +25,24 @@ async def on_ready():
     members = '\n - '.join([member.name for member in guild.members])
     print(f'Server Members:\n - {members}')
     
-@client.event
-async def on_message(message):
+#@client.event
+#async def on_message(message):
 	# Hello?
-	if message.content == "hello":
+#	if message.content == "hello":
 		# Fuck you
-		await message.channel.send("Go fuck yourself Adam")
+#		await message.channel.send("Go fuck yourself Adam")
 
 	# IMPORTANT IT BREAK WITHOUT
-	await client.process_commands(message)
-    
+#	await client.process_commands(message)
+	
+@client.command(
+	help="He turned himself into a pickle",
+	brief="Funniest shit I had ever seen"
+)
+
+async def hello(ctx):
+	await ctx.channel.send("Go fuck yourself Eoghan")
+	
 @client.command(
 	help="Uses come crazy logic to determine if pong is actually the correct value or not.",
 	brief="Prints pong back to the channel."
